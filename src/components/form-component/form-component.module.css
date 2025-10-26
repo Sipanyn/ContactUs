@@ -1,0 +1,116 @@
+.form_container {
+  inline-size: min(500px, 100%);
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  padding: 20px 15px;
+  border-radius: 6px;
+  .form_title {
+    color: #2d4304;
+  }
+  .inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      label {
+        .star {
+          color: #4a6e07;
+        }
+      }
+    }
+    .firstname {
+    }
+    .lastname {
+    }
+    .Emailaddress {
+      grid-column: span 2;
+    }
+    .questionType {
+      grid-column: span 2;
+      p {
+        .star {
+          color: #4a6e07;
+        }
+      }
+      .types {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        .type {
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          border: 1px solid #bbf451;
+
+          border-radius: 4px;
+          padding: 5px 20px;
+          &:has(input:checked) {
+            background-color: #bbf451;
+          }
+        }
+      }
+    }
+
+    .message {
+      grid-column: span 2;
+    }
+  }
+  .consent {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 5px;
+    grid-column: span 2;
+    margin-block: 10px;
+    input {
+      accent-color: #bbf451;
+      cursor: pointer;
+    }
+    label {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      .star {
+        color: #4a6e07;
+      }
+    }
+  }
+  .submit_btn {
+    border: none;
+    outline: none;
+    color: white;
+    font: inherit;
+    padding: 4px;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #bbf451;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+    &:hover {
+      background-color: #a1f00f;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .form_container {
+    .inputs {
+      .firstname {
+        grid-column: span 2;
+      }
+      .lastname {
+        grid-column: span 2;
+      }
+      .questionType {
+        .types {
+          .type {
+            grid-column: span 2;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "vazirmatn";
+  src: url("/fonts/Vazirmatn-VariableFont_wght.ttf") format("truetype");
+}
+:root {
+  font-family: "vazirmatn";
+  direction: rtl;
+}
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(229, 251, 188, 0.8);
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+input {
+  /* width: 100%; */
+  font: inherit;
+  padding: 4px 6px;
+  border: 1px solid #4a6e07;
+  border-radius: 6px;
+  outline-color: #4a6e07;
+  caret-color: #4a6e07;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+textarea {
+  font: inherit;
+  padding: 4px 6px;
+  border: 1px solid #4a6e07;
+  outline-color: #4a6e07;
+  caret-color: #4a6e07;
+  border-radius: 6px;
+  resize: none;
+  scrollbar-width: none;
+}
