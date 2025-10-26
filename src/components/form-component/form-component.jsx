@@ -29,7 +29,6 @@ const FormComponent = () => {
         </div>
         <div className={styles.questionType}>
           <p>
-            {" "}
             نوع سوال<span className={styles.star}>*</span>
           </p>
           <div className={styles.types}>
@@ -55,11 +54,14 @@ const FormComponent = () => {
           ></textarea>
         </div>
       </div>
-      <div className={styles.consent}>
-        <input type="checkbox" id="consent" />
-        <label htmlFor="consent">
-          جهت در ارتباط بودن با تیم رضایت کامل دارم
-          <span className={styles.star}>*</span>
+      <div>
+        <label className={styles.consent}>
+          <input type="checkbox" id="consent" />
+          <p>
+            {" "}
+            جهت در ارتباط بودن با تیم رضایت کامل دارم
+            <span className={styles.star}>*</span>
+          </p>
         </label>
       </div>
       <button className={styles.submit_btn} type="submit">
