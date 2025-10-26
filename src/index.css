@@ -21,7 +21,7 @@ body {
   min-height: 100vh;
   background-color: rgb(229, 251, 188, 0.8);
   margin: 0;
-  padding: 10px;
+  padding: min(5vw, 2rem);
   box-sizing: border-box;
 }
 input {
@@ -38,6 +38,34 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px white inset !important;
 }
+/* custom radio button */
+input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="radio"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #4caf50; /* ✅ center circle color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+/* custom radio button */
 textarea {
   font: inherit;
   padding: 4px 6px;

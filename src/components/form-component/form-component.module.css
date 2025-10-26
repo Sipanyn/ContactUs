@@ -47,9 +47,9 @@
 
           border-radius: 4px;
           padding: 5px 20px;
-          &:has(input:checked) {
+          /* &:has(input:checked) {
             background-color: #bbf451;
-          }
+          } */
         }
       }
     }
