@@ -5,7 +5,7 @@ import FormComponent from "./components/form-component/form-component";
 function App() {
   return (
     <>
-      <ToastContainer rtl={true} />
+      <ToastContainer rtl={true} closeButton={false} />
       <FormComponent />
     </>
   );
