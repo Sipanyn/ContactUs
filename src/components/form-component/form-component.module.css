@@ -99,6 +99,10 @@
       background-color: #a1f00f;
     }
   }
+  .errorMessage {
+    color: red;
+    font-size: x-small;
+  }
 }
 @media (max-width: 500px) {
   .form_container {
