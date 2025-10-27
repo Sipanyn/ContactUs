@@ -1,17 +1,17 @@
-import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import styles from "./form-component.module.css";
-import { zodResolver } from "@hookform/resolvers/zod";
-import formSchema from "../../utils/Schema";
-import onSubmit from "../../utils/onSubmit";
-const FormComponent = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm({
-    resolver: zodResolver(formSchema),
-  });
+import useReactHookForm from "../../utils/reactHookForm";
 
+const FormComponent = () => {
+  const { register, handleSubmit, errors, isSubmitting, reset } =
+    useReactHookForm();
+  const onSubmit = async (data) => {
+    const notify = () => toast.success("پیام شما با موفقیت ارسال شد");
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log(data);
+    notify();
+    reset();
+  };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form_container}>
       <h2 className={styles.form_title}>ارتباط با ما</h2>

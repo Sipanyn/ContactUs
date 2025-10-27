@@ -15,6 +15,9 @@ const formSchema = z.object({
 
   lastName: string()
     .nonempty("پر کردن این فیلد الزامی است")
+    .regex(/^[\u0600-\u06FF\s]+$/, {
+      message: "لطفا فقط از حروف فارسی استفاده کنید",
+    })
     .min(2, {
       error: (iss) => {
         if (iss.code === "too_small") {
