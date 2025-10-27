@@ -53,7 +53,7 @@ const FormComponent = () => {
           <p className={styles.errorMessage}>{errors.email?.message}</p>
         </div>
         <div className={styles.questionType}>
-          <p>
+          <p className={styles.questionType_title}>
             دسته بندی پیام<span className={styles.star}>*</span>
           </p>
           <p className={styles.errorMessage}>{errors.types?.message}</p>

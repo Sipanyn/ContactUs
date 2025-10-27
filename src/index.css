@@ -2,6 +2,10 @@
   font-family: "vazirmatn";
   src: url("/fonts/Vazirmatn-VariableFont_wght.ttf") format("truetype");
 }
+.Toastify__toast {
+  font-family: "vazirmatn";
+}
+
 :root {
   font-family: "vazirmatn";
   direction: rtl;

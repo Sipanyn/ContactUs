@@ -1,12 +1,16 @@
 import { email, string, z } from "zod";
 const formSchema = z.object({
-  name: string().min(2, {
-    error: (iss) => {
-      if (iss.code === "too_small") {
-        return { message: "نام حداقل باید دو حرف داشته باشد" };
-      }
-    },
-  }),
+  name: string()
+    .regex(/^[\u0600-\u06FF\s]+$/, {
+      message: "لطفا فقط از حروف فارسی استفاده کنید",
+    })
+    .min(2, {
+      error: (iss) => {
+        if (iss.code === "too_small") {
+          return { message: "نام حداقل باید دو حرف داشته باشد" };
+        }
+      },
+    }),
   lastName: string().min(2, {
     error: (iss) => {
       if (iss.code === "too_small") {
@@ -20,13 +24,8 @@ const formSchema = z.object({
   }),
   message: string()
     .trim()
-    .min(5, {
-      error: (iss) => {
-        if (iss.code === "too_small") {
-          return { message: "متن پیام حداقل باید شامل پنج حرف باشد" };
-        }
-      },
-    }),
+    .nonempty("لطفا پیام خود را وارد کنید")
+    .min(5, "پیشنهاد میکنیم پیامتان را کامل تر کنید"),
   agreeToTerms: z.literal(true, {
     error: () => ({
       message: "لطفا با شرایط موافقت کنید",
